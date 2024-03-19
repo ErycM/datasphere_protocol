@@ -1,8 +1,11 @@
+import { Provider } from "./provider";
+import { Router } from "./routes/";
+
 function App() {
   return (
-    <div>
-      <h1>Hello world</h1>
-    </div>
+    <Provider>
+      <Router />
+    </Provider>
   );
 }
 
