@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ConnectionPortfolio } from "../../structure";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,7 +7,7 @@ export function NavBar() {
   const linkNavBarResponsive = `${"text-black"} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-semibold cursor-pointer`;
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-10 ">
+    <nav className="bg-white shadow-lg fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center justify-between w-full">
@@ -24,9 +25,7 @@ export function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <button className="text-white bg-black p-7 py-2 rounded-md text-sm font-semibold cursor-pointer">
-                  CONNECT WALLET
-                </button>
+                <ConnectionPortfolio />
               </div>
             </div>
           </div>
@@ -78,9 +77,7 @@ export function NavBar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <button className={linkNavBarResponsive}>Home</button>
             <button className={linkNavBarResponsive}>Catalog</button>
-            <button className="text-white bg-black p-7 py-2 rounded-md text-sm font-semibold cursor-pointer">
-              CONNECT WALLET
-            </button>
+            <ConnectionPortfolio />
           </div>
         </div>
       )}
