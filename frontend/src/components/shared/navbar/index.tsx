@@ -1,30 +1,38 @@
 import { useState } from "react";
 import { ConnectionPortfolio } from "../../structure";
+import logo_navBar from "../../../assets/logo_navbar.png";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const linkNavBarResponsive = `${"text-black"} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-semibold cursor-pointer`;
-
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-black shadow-lg w-full z-10 mb-200">
+      <div className="w-full mx-auto px-10 sm:px-7 lg:px-44">
+        <div className="flex items-center justify-between h-14">
           <div className="flex items-center justify-between w-full">
-            <div className="flex-shrink-0">
-              <button className="text-black text-lg font-bold m-2">Home</button>
-              <button className="text-black text-lg font-bold  m-2">
-                Catalog
-              </button>
+            <div className="flex-shrink-0 flex">
+              <img src={logo_navBar} className="w-[70px] mt-4" />
+              <p className="text-white mt-8 ">DataSphare</p>
             </div>
             <div className="hidden md:block">
-              <button className="text-black text-lg font-bold m-2">Home</button>
-              <button className="text-black text-lg font-bold  m-2">
-                Catalog
-              </button>
+              <div className="flex justify-center">
+                <div className="md:w-2/3">
+                  {/* <input
+                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="inline-full-name"
+                    type="text"
+                    value="Jane Doe"
+                  /> */}
+                </div>
+              </div>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
+                <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
+                  Inicio
+                </button>
+                <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
+                  Catalago
+                </button>
                 <ConnectionPortfolio />
               </div>
             </div>
@@ -74,10 +82,20 @@ export function NavBar() {
       </div>
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button className={linkNavBarResponsive}>Home</button>
-            <button className={linkNavBarResponsive}>Catalog</button>
-            <ConnectionPortfolio />
+          <div className="px-2  pt-2 pb-3 space-y-1 sm:px-3 bg-black">
+            <div className="w-full">
+              <div className="flex flex-col ">
+                <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
+                  Inicio
+                </button>
+                <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
+                  Catalago
+                </button>
+                <div className="w-full flex justify-center">
+                  <ConnectionPortfolio />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
