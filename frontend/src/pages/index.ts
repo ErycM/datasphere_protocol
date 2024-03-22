@@ -1,3 +1,4 @@
 import { Home } from "./home";
+import { Purchase } from "./purchase";
 
-export { Home };
+export { Home, Purchase };
