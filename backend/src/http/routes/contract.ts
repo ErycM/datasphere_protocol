@@ -1,5 +1,4 @@
 import { FastifyInstance } from "fastify";
-import { uploadToIPFS } from "../../util/ipfs-functions";
 import { createToken } from "../../lib/web3";
 
 interface ResponseCreateToken {
@@ -11,15 +10,16 @@ export async function contract(app: FastifyInstance) {
   app.post('/contract/create', async (request, reply) => {
 
     const { fromAddress, privateKey } = request.body as any;
-    const data = await request.file();
-    const fileBuffer = await data.toBuffer();
+    // const data = await request.file();
+    // const fileBuffer = await data!.toBuffer();
 
     // realizar o upload do arquivo no ipfs;
-    const tokenURI = await uploadToIPFS(fileBuffer)
+    // const tokenURI = await uploadToIPFS(fileBuffer)
 
     // realizar a criacao do token no nosso contrato;
     try {
-      const result = await createToken(tokenURI, fromAddress, privateKey);
+      const result = await createToken('tokenURI', fromAddress, privateKey);
+      console.log(result)
 
       const response: ResponseCreateToken  = {
         success: true,
