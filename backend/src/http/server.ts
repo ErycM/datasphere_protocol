@@ -1,5 +1,5 @@
+import multipart from '@fastify/multipart';
 import fastify from 'fastify';
-import multipart from 'fastify-multipart';
 import { contract } from './routes/contract';
 import { healthCheck } from './routes/health-check';
 
