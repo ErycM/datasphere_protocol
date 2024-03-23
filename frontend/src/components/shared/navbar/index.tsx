@@ -27,12 +27,13 @@ export function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
+                {/* <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
                   Inicio
                 </button>
                 <button className="text-white text-base hover:text-slate-400 m-2 transition-colors">
                   Catalago
-                </button>
+                </button> */}
+
                 <ConnectionPortfolio />
               </div>
             </div>
